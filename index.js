@@ -69,8 +69,14 @@ Parameters:
  * callback function getYears
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(data, getYears, getWinners) {
+    let winnersByYear = [];
+    let winners = getWinners(data);
+    let years = getYears(data);
+    winners.forEach(function(item, index){
+        winnersByYear.push(`In ${years[index]}, ${winners[index]} won the world cup!`);
+    });
+    return winnersByYear;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
